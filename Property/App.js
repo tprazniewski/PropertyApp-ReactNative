@@ -4,6 +4,9 @@ import {createStackNavigator} from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './screens/Home'
 import Second from './screens/Second';
+import Powiaty from './screens/Powiaty'
+import Gmina from './screens/Gmina'
+import Miasto from './screens/Miasto'
 
 export default function App() {
 
@@ -14,6 +17,9 @@ export default function App() {
             <Navigator initialRouteName="Home" style={styles}>
               <Screen name='Home' component={Home}/>
               <Screen name='Second' component={Second}/>
+              <Screen name='Powiaty' component={Powiaty}/>
+              <Screen name='Gmina' component={Gmina}/>
+              <Screen name='Miasto' component={Miasto}/>
             </Navigator>
           </NavigationContainer>     
   );
