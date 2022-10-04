@@ -16,8 +16,10 @@ function Home({navigation}) {
   return (
     <View>
         <Text onPress={() => navigation.navigate('Second',{id: "hejlo"})}> This is The Home  Page</Text>
-        <Text onPress={searchApi}> Clickable </Text>
+        <Text onPress={searchApi}> Clickable To get all the  County Names</Text>
         <Text onPress={searchApi} style={styles.text}> We have results: {result.length}</Text>
+        {result.map((el) => <Text onPress={searchApi} style={styles.text}> We have results: {el.County}</Text>
+        )}
     </View>
   )
 }

@@ -8,6 +8,7 @@ import Second from './screens/Second';
 export default function App() {
 
   const {Navigator, Screen} = createStackNavigator();
+  
   return (
            <NavigationContainer style={styles.container}>
             <Navigator initialRouteName="Home" style={styles}>
