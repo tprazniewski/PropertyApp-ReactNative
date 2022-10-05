@@ -8,8 +8,7 @@ function Second({route, navigation}) {
   const [result, setResult] = useState([]);
     
   const searchApi = async () =>{
-      const response = await powiaty.get();
-      console.log(response.data.length)
+      const response = await powiaty.get(route.params);
       setResult(response.data);
   }
 
@@ -18,7 +17,6 @@ function Second({route, navigation}) {
     searchApi()
   },[])
 
-  console.log(route.params)
   return (
     <View>
     <FlatList

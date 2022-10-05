@@ -3,13 +3,12 @@ import {View, Text,Button, FlatList,StyleSheet} from 'react-native'
 import gminy from '../src/api/gmina'
 
 function Second({route, navigation}) {
-
   const [result, setResult] = useState([]);
     
   const searchApi = async () =>{
+      console.log(route)
       const response = await gminy.get();
-      console.log("powiaty")
-      console.log(response.data)
+
       setResult(response.data);
   }
 
@@ -18,7 +17,6 @@ function Second({route, navigation}) {
     searchApi()
   },[])
 
-  console.log(route.params)
   return (
 
     <View>
