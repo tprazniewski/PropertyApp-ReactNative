@@ -6,9 +6,10 @@ import powiaty from '../src/api/powiat'
 function Second({route, navigation}) {
 
   const [result, setResult] = useState([]);
-    
   const searchApi = async () =>{
       const response = await powiaty.get(route.params);
+      // console.log('Second',route.params)
+      // console.log('response', response.data)
       setResult(response.data);
   }
 
@@ -27,7 +28,7 @@ function Second({route, navigation}) {
       renderItem={( {item} ) => (
         <Button
           title={item.District}
-          onPress={() => navigation.navigate("Powiaty", item.District)}
+          onPress={() => navigation.navigate("Powiaty", [route.params, item.District])}
         />
       )}
     />

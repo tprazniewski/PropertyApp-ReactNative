@@ -8,7 +8,6 @@ function Home({navigation}) {
     
     const searchApi = async () =>{
         const response = await property.get();
-        console.log(response.data)
         setResult(response.data);
     }
 

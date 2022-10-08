@@ -8,7 +8,7 @@ function Second({route, navigation}) {
   const [result, setResult] = useState([]);
     
   const searchApi = async () =>{
-      const response = await miasto.get();
+      const response = await miasto.get(`${route.params[0]}/${route.params[1]}/${route.params[2]}`);
       console.log(response.data)
       setResult(response.data);
   }
@@ -30,7 +30,7 @@ function Second({route, navigation}) {
       renderItem={( {item} ) => (
         <Button
           title={item.City}
-          onPress={() => navigation.navigate("Miasto", item.City)}
+          onPress={() => navigation.navigate("Miasto", [route.params[0],route.params[1],route.params[2],item.City])}
         />
       )}
     />

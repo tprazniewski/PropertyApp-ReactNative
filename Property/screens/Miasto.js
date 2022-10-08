@@ -8,7 +8,7 @@ function Second({route, navigation}) {
   const [result, setResult] = useState([]);
     
   const searchApi = async () =>{
-      const response = await ogloszenia.get();
+      const response = await ogloszenia.get(`${route.params[0]}/${route.params[1]}/${route.params[2]}/${route.params[3]}`);
       console.log(response.data)
       setResult(response.data);
   }
