@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {View, Text,Button, FlatList,StyleSheet} from 'react-native'
-import ogloszenia from '../src/api/ogloszenia'
+import ogloszenia from '../src/api/property'
 
 
 function Second({route, navigation}) {

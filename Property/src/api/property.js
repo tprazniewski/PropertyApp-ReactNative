@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-    baseURL: "http://tprazniewski.com/api/properties/wojewodztwa"
+    baseURL: "http://tprazniewski.com/api/properties/wojewodztwa/"
 })

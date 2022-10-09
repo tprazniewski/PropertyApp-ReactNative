@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {View, Text,Button, FlatList,StyleSheet} from 'react-native'
-import miasto from '../src/api/miasto'
+import miasto from '../src/api/property'
 
 
 function Second({route, navigation}) {

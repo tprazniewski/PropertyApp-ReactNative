@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {View, Text,Button, FlatList,StyleSheet} from 'react-native'
-import powiaty from '../src/api/powiat'
+import powiaty from '../src/api/property'
 
 
 function Second({route, navigation}) {
@@ -8,8 +8,7 @@ function Second({route, navigation}) {
   const [result, setResult] = useState([]);
   const searchApi = async () =>{
       const response = await powiaty.get(route.params);
-      // console.log('Second',route.params)
-      // console.log('response', response.data)
+
       setResult(response.data);
   }
 

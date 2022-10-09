@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {View, Text,Button, FlatList,StyleSheet} from 'react-native'
-import gminy from '../src/api/gmina'
+import gminy from '../src/api/property'
 
 function Second({route, navigation}) {
   const [result, setResult] = useState([]);
