@@ -9,7 +9,6 @@ function Second({route, navigation}) {
     
   const searchApi = async () =>{
       const response = await gminy.get();
-      console.log(response.data)
       setResult(response.data);
   }
 
@@ -18,7 +17,6 @@ function Second({route, navigation}) {
     searchApi()
   },[])
 
-  console.log(route.params)
   return (
     <View>
         <Text onPress={() => navigation.navigate('Second',{id: "hejlo"})}> This is a Third Screen Page</Text>

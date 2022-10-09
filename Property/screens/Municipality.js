@@ -6,7 +6,6 @@ function Second({route, navigation}) {
   const [result, setResult] = useState([]);
     
   const searchApi = async () =>{
-      console.log(route)
       const response = await gminy.get(`${route.params[0]}/${route.params[1]}`);
 
       setResult(response.data);

@@ -9,7 +9,6 @@ function Second({route, navigation}) {
     
   const searchApi = async () =>{
       const response = await ogloszenia.get(`${route.params[0]}/${route.params[1]}/${route.params[2]}/${route.params[3]}`);
-      console.log(response.data)
       setResult(response.data);
   }
 
@@ -18,7 +17,6 @@ function Second({route, navigation}) {
     searchApi()
   },[])
 
-  console.log(route.params)
   return (
     <View>
     <FlatList
