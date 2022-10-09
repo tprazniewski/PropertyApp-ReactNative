@@ -27,7 +27,7 @@ function Home({navigation}) {
         renderItem={( {item} ) => (
           <Button
             title={item.County}
-            onPress={() => navigation.navigate("Second", item.County)}
+            onPress={() => navigation.navigate("District", item.County)}
           />
         )}
       />

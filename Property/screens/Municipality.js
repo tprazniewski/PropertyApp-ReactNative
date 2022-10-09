@@ -28,7 +28,7 @@ function Second({route, navigation}) {
       renderItem={( {item} ) => (
         <Button
           title={item.Municipality}
-          onPress={() => navigation.navigate("Gmina", [route.params[0],route.params[1], item.Municipality])}
+          onPress={() => navigation.navigate("City", [route.params[0],route.params[1], item.Municipality])}
         />
       )}
     />

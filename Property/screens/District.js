@@ -1,15 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import {View, Text,Button, FlatList,StyleSheet} from 'react-native'
-import miasto from '../src/api/property'
+import powiaty from '../src/api/property'
 
 
 function Second({route, navigation}) {
 
   const [result, setResult] = useState([]);
-    
   const searchApi = async () =>{
-      const response = await miasto.get(`${route.params[0]}/${route.params[1]}/${route.params[2]}`);
-      console.log(response.data)
+      const response = await powiaty.get(route.params);
+
       setResult(response.data);
   }
 
@@ -18,9 +17,7 @@ function Second({route, navigation}) {
     searchApi()
   },[])
 
-  console.log(route.params)
   return (
-
     <View>
     <FlatList
       keyExtractor={(item, index) => index.toString()}
@@ -29,20 +26,19 @@ function Second({route, navigation}) {
       // data={user}
       renderItem={( {item} ) => (
         <Button
-          title={item.City}
-          onPress={() => navigation.navigate("Miasto", [route.params[0],route.params[1],route.params[2],item.City])}
+          title={item.District}
+          onPress={() => navigation.navigate("Municipality", [route.params, item.District])}
         />
       )}
     />
   </View>
-
     // <View>
-    //     <Text onPress={() => navigation.navigate('Second',{id: "hejlo"})}> This is a Third Screen Page</Text>
-    //     {result.map((el) => <Button title={el.City} onPress={() => navigation.navigate('Miasto',el.District)}/>
+    //     <Text onPress={() => navigation.navigate('Home',{id: "hejlo"})}> This is a Second Screen Page</Text>
+    //     {result.map((el) => <Button title={el.District} onPress={() => navigation.navigate('Powiaty',el.District)}/>
     //     // {result.map((el) => <Text onPress={searchApi} style={styles.text}> We have results: {el.County}</Text>
     //     )}
-    // </View> 
-     )
+    // </View>  
+    )
 }
 
 export default Second

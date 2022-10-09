@@ -2,11 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
-import Home from './screens/Home'
-import Second from './screens/Second';
-import Powiaty from './screens/Powiaty'
-import Gmina from './screens/Gmina'
-import Miasto from './screens/Miasto'
+import County from './screens/County'
+import District from './screens/District';
+import Municipality from './screens/Municipality'
+import City from './screens/City'
+import Adds from './screens/Adds'
 
 export default function App() {
 
@@ -14,12 +14,12 @@ export default function App() {
   
   return (
            <NavigationContainer style={styles.container}>
-            <Navigator initialRouteName="Home" style={styles}>
-              <Screen name='Home' component={Home}/>
-              <Screen name='Second' component={Second}/>
-              <Screen name='Powiaty' component={Powiaty}/>
-              <Screen name='Gmina' component={Gmina}/>
-              <Screen name='Miasto' component={Miasto}/>
+            <Navigator initialRouteName="County" style={styles}>
+              <Screen name='County' component={County}/>
+              <Screen name='District' component={District}/>
+              <Screen name='Municipality' component={Municipality}/>
+              <Screen name='City' component={City}/>
+              <Screen name='Adds' component={Adds}/>
             </Navigator>
           </NavigationContainer>     
   );
